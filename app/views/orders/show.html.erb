@@ -5,7 +5,12 @@
   </header>
 
   <div class="order-summary jumbotron">
+  <div class="alert alert-primary" role="alert">
     <h4>Thank you for your order!</h4>
+     <span>Your receipt will be emailed to: <%= @order.email %></span>
+    </div>
+
+    <%= render partial: 'order_summary', locals: { order: @order } %>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
